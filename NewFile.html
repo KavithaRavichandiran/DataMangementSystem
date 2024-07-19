@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Management System</title>
+    <style>
+        body {
+            background-color: #f4f4f9;
+            color: #333;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            background-color:black;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 50px;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+
+        .operations {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .operation {
+            flex: 1;
+            min-width: 250px;
+            margin: 10px;
+            padding: 20px;
+            background-color:lavender;
+            color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .operation h2 {
+            margin-top: 0;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input, button {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            font-size: 1em;
+        }
+
+        input {
+            background-color: white;
+            color: #333;
+        }
+
+        button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        .view-data a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #ffc107;
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .view-data a:hover {
+            background-color: #e0a800;
+        }
+
+        .table-container {
+            margin-top: 40px;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #007bff;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f4f4f9;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 10px;
+        }
+
+        .button-group button {
+            background-color: #007bff;
+        }
+
+        .button-group button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Data Management System</h1>
+    </div>
+    <div class="container">
+        <div class="operations">
+            <div class="operation">
+                <h2>Insert Data</h2>
+                <form action="crud" method="post">
+                    <input type="hidden" name="action" value="insert">
+                    <label for="id">ID:</label>
+                    <input type="text" name="id" required>
+                    <label for="name">Name:</label>
+                    <input type="text" name="name" required>
+                    <label for="age">Age:</label>
+                    <input type="number" name="age" required>
+                    <button type="submit">Insert</button>
+                </form>
+            </div>
+            <div class="operation">
+                <h2>Update Data</h2>
+                <form action="crud" method="post">
+                    <input type="hidden" name="action" value="update">
+                    <label for="id">ID:</label>
+                    <input type="number" name="id" required>
+                    <label for="newName">New Name:</label>
+                    <input type="text" name="newName" required>
+                    <label for="newAge">New Age:</label>
+                    <input type="number" name="newAge" required>
+                    <button type="submit">Update</button>
+                </form>
+            </div>
+            <div class="operation">
+                <h2>Delete Data</h2>
+                <form action="crud" method="post">
+                    <input type="hidden" name="action" value="delete">
+                    <label for="id">ID:</label>
+                    <input type="number" name="id" required>
+                    <button type="submit">Delete</button>
+                </form>
+            </div>
+            <div class="operation view-data">
+                <h2>View Data</h2>
+                <a href="crud">View All Data</a>
+            </div>
+        </div>
+        
+    </div>
+
+    
+</body>
+</html>
